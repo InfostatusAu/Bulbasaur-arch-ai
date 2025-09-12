@@ -1,0 +1,23 @@
+# Architecture Proposal – {{ project.name }}
+
+## Executive Summary
+{{ summary }}
+
+## Requirements
+{{ requirements }}
+
+## Architecture Variant: {{ variant.id }}
+- Summary: {{ variant.summary }}
+- Components:
+{% for c in variant.components %}
+  - {{ c }}
+{% endfor %}
+
+## Diagram
+(see attached diagram)
+
+## Estimated Cost
+Monthly: ${{ variant.estimated_cost.monthly_usd }}
+
+## Risks
+Risk score: {{ variant.risk_score }}

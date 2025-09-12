@@ -1,0 +1,9 @@
+# Ignore generated artifacts
+artifacts/
+
+# Ignore environment variables
+.env
+
+# Ignore Python cache
+__pycache__/
+*.pyc

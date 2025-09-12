@@ -1,0 +1,9 @@
+name: webapp
+tags: ["web","api"]
+components:
+  - id: api
+    type: API Gateway
+  - id: app
+    type: ECS Service
+  - id: db
+    type: RDS
