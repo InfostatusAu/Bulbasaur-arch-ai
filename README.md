@@ -15,26 +15,8 @@ It enables teams to gather requirements, analyze client needs, synthesize soluti
 ---
 
 ## 📂 Project Structure
-bulbasaur-arch-ai/
-│── main.py
-│── requirements.txt
-│
-├── routers/
-│   │── __init__.py
-│   │── validate.py
-│   │── analyze.py     # (optional, for your analyze endpoint)
-│
-├── models/            # (optional, if you want to separate Pydantic models)
-│   │── __init__.py
-│   │── validation.py
-│
-├── tests/             # (optional, for pytest unit tests)
-│   │── __init__.py
-│   │── test_validate.py
-│
-├── venv/              # your Python virtual environment
-│   └── ...
 
+you can check the repo
 
 ---
 
