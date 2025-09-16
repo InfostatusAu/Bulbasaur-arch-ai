@@ -18,7 +18,7 @@ REST API built with FastAPI
 
 Auto-generated Swagger UI at /docs
 
-Simple scripts for starting and testing
+Scripts for easy server start and testing
 
 Health check endpoint (/health)
 
@@ -41,16 +41,21 @@ Health check endpoint (/health)
 ✅ Minimum needed to run:
 
 mcp_server/
-requirements.txt
-run.sh
 
+requirements.txt
+
+run.sh
 
 ➕ For full dev/test flow:
 
 README.md
+
 run-mcp.sh
+
 test_mcp.sh
+
 tests/
+
 pytest.ini
 
 ⚡ Quick Start
@@ -77,7 +82,8 @@ Kill any process on port 8001
 
 Start the FastAPI server
 
-Auto-open Swagger UI at http://127.0.0.1:8001/docs
+Auto-open Swagger UI at:
+👉 http://127.0.0.1:8001/docs
 
 🌐 Working with Swagger UI & IDs
 
@@ -87,7 +93,7 @@ When the server is running, open Swagger UI (/docs) to interact with endpoints:
 
 Endpoint: POST /projects/create
 
-Example body:
+Body Example:
 
 {
   "name": "My Project",
@@ -95,7 +101,7 @@ Example body:
 }
 
 
-Response:
+Response Example:
 
 {"project_id": "123e4567-e89b-12d3-a456-426614174000"}
 
@@ -103,19 +109,19 @@ Response:
 
 Endpoint: POST /analyze/{project_id}
 
-Paste your project_id
+Action: Paste your project_id
 
 3. Synthesize Project
 
 Endpoint: POST /synthesize/{project_id}
 
-Use the same project_id
+Action: Use the same project_id
 
 4. Validate Project
 
 Endpoint: POST /validate/{project_id}
 
-Example body:
+Body Example:
 
 {
   "requirements": ["scalability", "security", "performance"]
@@ -125,13 +131,13 @@ Example body:
 
 Endpoint: GET /health
 
-Response:
+Response Example:
 
 {"status": "ok"}
 
 🧪 CLI Testing
 
-Instead of Swagger, you can run the automated flow:
+Instead of Swagger, you can run the automated workflow:
 
 ./test_mcp.sh
 
