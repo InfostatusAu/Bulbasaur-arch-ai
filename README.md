@@ -1,107 +1,113 @@
-# 🐲 Bulbasaur MCP Server
+🐲 Bulbasaur MCP Server
 
-The **Bulbasaur MCP Server** is a FastAPI-based application that demonstrates **AI-assisted solution architecture**.  
-It enables teams to gather requirements, analyze client needs, synthesize solution variants, validate against best practices, and generate documentation.  
+The Bulbasaur MCP Server is a FastAPI-based application that demonstrates AI-assisted solution architecture.
+It helps teams gather requirements, analyze client needs, generate solution variants, validate against best practices, and produce architecture documentation.
 
----
+🚀 Features
 
-## 🚀 Features
-- 📋 Create & manage solution projects  
-- 🔎 Analyze requirements  
-- 🏗️ Synthesize multiple solution variants  
-- ✅ Validate solutions against constraints  
-- 📑 Auto-generate architecture documentation  
+📋 Create & manage solution projects
 
----
+🔎 Analyze requirements
 
-## 📂 Project Structure
+🏗️ Synthesize multiple solution variants
 
-you can check the repo
+✅ Validate solutions against constraints
 
----
+📑 Auto-generate architecture documentation
 
-## ⚙️ Setup Instructions
+🌐 Interactive API docs via Swagger
 
-### 1. Clone Repository
-```bash
-git clone <your-repo-url>
+📂 Repository Structure
+bulbasaur-arch-ai/
+│── README.md
+│── requirements.txt
+│
+└── mcp_server/
+    ├── main.py          # Entry point (FastAPI app)
+    ├── routes/
+    │   ├── projects.py  # Project management endpoints
+    │   ├── analyze.py   # Analyse solution requirements
+    │   ├── synthesize.py # Generate architectures
+    │   └── validate.py  # Validate architecture designs
+
+⚙️ Setup Instructions
+1. Clone Repository
+git clone https://github.com/<your-username>/bulbasaur-arch-ai.git
 cd bulbasaur-arch-ai
 
 2. Create Virtual Environment
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate   # (Linux/Mac)
+venv\Scripts\activate      # (Windows)
 
 3. Install Dependencies
 pip install -r requirements.txt
 
 4. Run Server
 uvicorn mcp_server.main:app --reload --port 8001
-Server will be available at:
-👉 http://127.0.0.1:8001
 
-Swagger UI:
-👉 http://127.0.0.1:8001/docs
+
+👉 Server available at:
+
+API root: http://127.0.0.1:8001
+
+Swagger UI: http://127.0.0.1:8001/docs
 
 📡 API Endpoints
+1. Root
+curl http://127.0.0.1:8001/
 
-(A) Create Project
+
+✅ Response:
+
+{"msg": "Bulbasaur MCP Server running"}
+
+2. Create Project
 POST /projects/
-
-Body:
 {
   "name": "AI Architecture Project",
   "description": "Design intelligent architecture"
 }
-➡️ Returns project_id (use it in the next steps).
 
-(B) Analyze Project
+
+➡️ Returns project_id
+
+3. Analyze Project
 POST /analyze/{project_id}
-
-Body:
 {
   "requirements": ["Scalable", "Secure", "Low cost"]
 }
-(C) Synthesize Solutions
+
+4. Synthesize Solutions
 POST /synthesize/{project_id}
 {
   "options": ["cloud-native", "on-prem"]
 }
-➡️ Returns variant_ids (save them for validation).
-(D) Validate Solution
 
+
+➡️ Returns variant_ids
+
+5. Validate Solution
 POST /validate/{project_id}
-
-Body:
 {
   "variant_ids": ["v1-cost"]
 }
 
 🛠️ Common Issues & Fixes
 
-❌ Swagger UI not loading → Check port (--port 8001).
+❌ Swagger UI not loading → check port (--port 8001)
 
-❌ Server not starting → Wrong path. Use:
+❌ Server not starting → ensure path:
+
 uvicorn mcp_server.main:app --reload --port 8001
 
-❌ Validation endpoint not found → Fixed double prefix with @router.post("/{project_id}").
 
-❌ Validation bad request → Schema updated to variant_ids: List[str].
+❌ Validation errors → ensure request body includes "variant_ids": List[str]
 
-📌 Notes
+🎯 Results
 
-Runs locally inside Python virtual environment.
+✅ Challenge 1 goal achieved: MCP server prototype completed
 
-👨‍💻 Team Bulbasaur – Intelligent Solution Architecture
+✅ Endpoints for projects, analyse, synthesize, validate working
 
----
-
-✅ Next step for you:  
-
-1. Create `README.md` file in your repo root.  
-2. Paste the content above.  
-3. Commit & push:  
-
-```bash
-git add README.md
-git commit -m "Add project README"
-git push origin main
+✅ Forms the foundation for Challenge 2 (containerized microservices + orchestrator)
