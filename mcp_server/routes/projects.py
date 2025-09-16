@@ -10,7 +10,7 @@ class ProjectCreate(BaseModel):
 
 projects_db = {}
 
-@router.post("/")
+@router.post("/create")
 def create_project(payload: ProjectCreate):
     pid = len(projects_db) + 1
     projects_db[pid] = payload.dict()

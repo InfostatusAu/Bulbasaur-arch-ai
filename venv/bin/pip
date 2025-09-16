@@ -1,4 +1,4 @@
-#!/Users/simamazaheri/Downloads/Bulbasaur-arch-ai/venv/bin/python3
+#!/Applications/Bulbasaur-arch-ai/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from mcp_server.routes import projects, analyze, synthesize, validate
 
 app = FastAPI(title="Bulbasaur MCP Server")
@@ -12,3 +12,9 @@ app.include_router(validate.router, prefix="/validate", tags=["validate"])
 @app.get("/")
 def root():
     return {"msg": "Bulbasaur MCP Server running"}
+
+from fastapi import Response
+
+@app.get("/health")
+async def health_check():
+    return Response(content="ok", media_type="text/plain")
